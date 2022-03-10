@@ -9,18 +9,20 @@ import kotlinx.android.synthetic.main.rv_item_list.view.*
 
 class ResultItemAdapter(
     private val data: List<Data>
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+) : RecyclerView.Adapter<ResultItemAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    inner class ViewHolder(binding: RvItemListBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResultItemAdapter.ViewHolder {
         val binding = RvItemListBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return ResultItemViewHolder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.resultItemView.setData(data[position])
     }
 
