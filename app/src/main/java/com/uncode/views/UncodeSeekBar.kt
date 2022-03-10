@@ -13,12 +13,12 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        val viewWidth = width.toFloat().toDp()
+        val viewWidth = width.toFloat()
         val firstSection = (viewWidth / 3)
         val secondSection = (firstSection + firstSection)
-        drawGreenArea(canvas, firstSection)
-        //drawYellowArea(canvas, firstSection, secondSection)
-        //drawRedArea(canvas, secondSection, width.toFloat().toDp())
+        drawGreenArea(canvas, firstSection.toDp())
+        drawYellowArea(canvas, firstSection, secondSection)
+        drawRedArea(canvas, secondSection, viewWidth)
     }
 
     private fun Float.toDp() = this / resources.displayMetrics.density
@@ -30,6 +30,7 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
         var end = 2f
 
         while (start.toDp() < endpoint) {
+            Log.d("Pocetna tacka 1", start.toDp().toString())
             canvas.drawRoundRect(
                 start,
                 10f.toDp(),
@@ -49,12 +50,8 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
     }
 
     private fun drawYellowArea(canvas: Canvas, startpoint: Float, endpoint: Float) {
-        //Log.d("Start2", startpoint.toString())
-        //Log.d("Kraj2", endpoint.toString())
         var start = startpoint
-        var end = (startpoint + 1)
-        Log.d("Start2", start.toString())
-        Log.d("End2", end.toString())
+        var end = startpoint + 1
 
         while (start < endpoint) {
             canvas.drawRoundRect(
@@ -79,7 +76,7 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
         var start = startpoint
         var end = startpoint + 1
 
-        while (left < endpoint) {
+        while (start < endpoint) {
             canvas.drawRoundRect(
                 start,
                 10f.toDp(),
