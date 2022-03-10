@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.uncode.databinding.ActivityMainBinding
-import com.uncode.ui.main.Data
-import com.uncode.ui.main.RecyclerViewAdapter
+import com.uncode.ui.main.ResultItemAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,7 +46,8 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = RecyclerViewAdapter(data)
+        binding.recyclerView.adapter = ResultItemAdapter(data)
     }
 }
