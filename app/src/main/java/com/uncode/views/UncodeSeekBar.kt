@@ -8,68 +8,58 @@ import android.view.View
 class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
     View(context, attrs) {
 
-
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        makeCustomSeekBar(canvas)
-    }
-
-    private fun makeCustomSeekBar(canvas: Canvas) {
         val viewWidth = width.toFloat()
-        val firstSection = (viewWidth / 3)
-        val secondSection = (firstSection + firstSection)
+        val section = (viewWidth / 50)
+        val paintGreen = Paint(Paint.ANTI_ALIAS_FLAG)
+            .apply {
+                color = Color.GREEN
+                style = Paint.Style.FILL
+            }
+
+        val paintYellow = Paint(Paint.ANTI_ALIAS_FLAG)
+            .apply {
+                color = Color.YELLOW
+                style = Paint.Style.FILL
+            }
+
+        val paintRed = Paint(Paint.ANTI_ALIAS_FLAG)
+            .apply {
+                color = Color.RED
+                style = Paint.Style.FILL
+            }
+
+        fun drawRect(start: Float, end: Float, color: Paint) {
+            canvas.drawRoundRect(
+                start,
+                10f,
+                end,
+                (height.toFloat() - 10f),
+                1f,
+                1f,
+                color
+            )
+        }
 
         var start = 0f
-        var end = 2f
-
-        while (start < viewWidth) {
-            when {
-                start < firstSection -> {
-                    canvas.drawRoundRect(
-                        start,
-                        10f,
-                        end,
-                        (height.toFloat() - 10f),
-                        2f,
-                        2f,
-                        Paint(Paint.ANTI_ALIAS_FLAG)
-                            .apply {
-                                color = Color.GREEN
-                                style = Paint.Style.FILL
-                            })
+        var end = 3f
+        for (i in 0 until 50) {
+            when (i) {
+                in 0..15 -> {
+                    drawRect(start, end, paintGreen)
                 }
-                start > firstSection && start < secondSection -> {
-                    canvas.drawRoundRect(
-                        start,
-                        10f,
-                        end,
-                        (height.toFloat() - 10f),
-                        2f,
-                        2f,
-                        Paint(Paint.ANTI_ALIAS_FLAG)
-                            .apply {
-                                color = Color.YELLOW
-                                style = Paint.Style.FILL
-                            })
+                in 16..33 -> {
+                    drawRect(start, end, paintYellow)
                 }
-                start > firstSection && start > secondSection -> {
-                    canvas.drawRoundRect(
-                        start,
-                        10f,
-                        end,
-                        (height.toFloat() - 10f),
-                        2f,
-                        2f,
-                        Paint(Paint.ANTI_ALIAS_FLAG)
-                            .apply {
-                                color = Color.RED
-                                style = Paint.Style.FILL
-                            })
+                in 34..50 -> {
+                    drawRect(start, end, paintRed)
                 }
             }
-            start += 15.0f
-            end += 15.0f
+
+            start += section
+            end += section
         }
     }
 }
