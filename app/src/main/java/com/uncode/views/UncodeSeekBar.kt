@@ -8,58 +8,60 @@ import android.view.View
 class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
     View(context, attrs) {
 
+    private val paintGreen = Paint(Paint.ANTI_ALIAS_FLAG)
+        .apply {
+            color = Color.GREEN
+            style = Paint.Style.FILL
+        }
+
+    private val paintYellow = Paint(Paint.ANTI_ALIAS_FLAG)
+        .apply {
+            color = Color.YELLOW
+            style = Paint.Style.FILL
+        }
+
+    private val paintRed = Paint(Paint.ANTI_ALIAS_FLAG)
+        .apply {
+            color = Color.RED
+            style = Paint.Style.FILL
+        }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         val viewWidth = width.toFloat()
         val section = (viewWidth / 50)
-        val paintGreen = Paint(Paint.ANTI_ALIAS_FLAG)
-            .apply {
-                color = Color.GREEN
-                style = Paint.Style.FILL
-            }
-
-        val paintYellow = Paint(Paint.ANTI_ALIAS_FLAG)
-            .apply {
-                color = Color.YELLOW
-                style = Paint.Style.FILL
-            }
-
-        val paintRed = Paint(Paint.ANTI_ALIAS_FLAG)
-            .apply {
-                color = Color.RED
-                style = Paint.Style.FILL
-            }
-
-        fun drawRect(start: Float, end: Float, color: Paint) {
-            canvas.drawRoundRect(
-                start,
-                10f,
-                end,
-                (height.toFloat() - 10f),
-                1f,
-                1f,
-                color
-            )
-        }
-
+        
         var start = 0f
         var end = 3f
         for (i in 0 until 50) {
             when (i) {
                 in 0..15 -> {
-                    drawRect(start, end, paintGreen)
+                    drawRect(canvas, start, end, paintGreen)
                 }
                 in 16..33 -> {
-                    drawRect(start, end, paintYellow)
+                    drawRect(canvas, start, end, paintYellow)
                 }
                 in 34..50 -> {
-                    drawRect(start, end, paintRed)
+                    drawRect(canvas, start, end, paintRed)
                 }
             }
 
             start += section
             end += section
         }
+    }
+
+
+    private fun drawRect(canvas: Canvas, start: Float, end: Float, color: Paint) {
+        canvas.drawRoundRect(
+            start,
+            10f,
+            end,
+            (height.toFloat() - 10f),
+            1f,
+            1f,
+            color
+        )
     }
 }
