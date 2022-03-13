@@ -31,9 +31,9 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
 
         val viewWidth = width.toFloat()
         val section = (viewWidth / 50)
-        
+
         var start = 0f
-        var end = 3f
+        var end = section / 3
         for (i in 0 until 50) {
             when (i) {
                 in 0..15 -> {

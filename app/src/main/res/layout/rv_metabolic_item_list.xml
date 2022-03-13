@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.uncode.views.ResultViewItem
-        android:id="@+id/resultItemView"
+    <com.uncode.views.MetabolicViewItem
+        android:id="@+id/proteinTypeCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </FrameLayout>

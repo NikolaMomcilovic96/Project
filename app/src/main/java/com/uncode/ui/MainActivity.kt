@@ -16,37 +16,33 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val data = mutableListOf(
-            Data(
+        val data = listOf(
+            DataModel.Metabolic("Protein", 28, "Carbohydrate", 47, "Fat", 25),
+            DataModel.Data(
                 "Tendency to Overweight",
                 "High",
-                47,
                 "low",
                 "normal",
                 "high",
                 "There is a high tendency to become overweight."
             ),
-            Data(
+            DataModel.Data(
                 "Feeling Hungry",
                 "Normal",
-                83,
                 "low",
                 "normal",
                 "high",
                 "You have a normal feeling of hunger compared to people with other genetic constellations."
             ),
-            Data(
+            DataModel.Data(
                 "Inclination to Jojo Effect",
                 "High",
-                50,
                 "low",
                 "medium",
                 "high",
                 "With your genotype you tend towards the yo-yo effect."
-            )
+            ),
         )
-
-
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = ResultItemAdapter(data)
     }
