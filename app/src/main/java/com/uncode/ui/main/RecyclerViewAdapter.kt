@@ -3,6 +3,7 @@ package com.uncode.ui.main
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uncode.R
 import com.uncode.ui.DataModel
@@ -25,16 +26,20 @@ class ResultItemAdapter(
             }
         }
 
-        private fun bindMetabolic(item: DataModel.Metabolic) {
+        private fun writeWithPercent(value: Int) : String{
+            return "$value%"
+        }
 
-            /*itemView.findViewById<TextView>(R.id.proteinTextView)?.text = item.protein
-            itemView.findViewById<TextView>(R.id.proteinValueTextView)?.text =
-                item.proteinValue.toString()
-            itemView.findViewById<TextView>(R.id.carbohydrateTextView)?.text = item.carbohydrate
-            itemView.findViewById<TextView>(R.id.carbohydrateValue)?.text =
-                item.carbohydrateValue.toString()
-            itemView.findViewById<TextView>(R.id.fatTextView)?.text = item.fat
-            itemView.findViewById<TextView>(R.id.fatValue)?.text = item.fatValue.toString()*/
+        private fun bindMetabolic(item: DataModel.Metabolic) {
+            itemView.findViewById<TextView>(R.id.proteinTextView).text = item.protein
+            itemView.findViewById<TextView>(R.id.proteinValueTextView).text =
+                writeWithPercent(item.proteinValue)
+            itemView.findViewById<TextView>(R.id.carbohydrateTextView).text = item.carbohydrate
+            itemView.findViewById<TextView>(R.id.carbohydrateValue).text =
+                writeWithPercent(item.carbohydrateValue)
+            itemView.findViewById<TextView>(R.id.fatTextView).text = item.fat
+            itemView.findViewById<TextView>(R.id.fatValue).text = writeWithPercent(item.fatValue)
+            itemView.carbohydrateSeekBar.getData(item.proteinValue, item.carbohydrateValue, item.fatValue)
         }
 
         private fun bindData(item: DataModel.Data) {
@@ -44,7 +49,7 @@ class ResultItemAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ResultItemAdapter.ViewHolder {
+    ): ViewHolder {
         val layout = when (viewType) {
             TYPE_METABOLIC -> R.layout.rv_metabolic_item_list
             TYPE_DATA -> R.layout.rv_item_list

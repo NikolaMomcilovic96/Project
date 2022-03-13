@@ -19,26 +19,32 @@ class MetabolicSeekBar(context: Context, attrs: AttributeSet? = null) : View(con
         style = Paint.Style.FILL
     }
 
+    private var proteinValue = 0
+    private var carbValue = 0
+    private var fatValue = 0
+
+    fun getData(protein: Int, carb: Int, fat: Int) {
+        proteinValue = protein
+        carbValue = carb
+        fatValue = fat
+    }
 
     override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-
         val section = width / 100
 
-        val percent = 47
         var start = 0f
         var end = section.toFloat()
 
-        for (i in 0..percent) {
+        for (i in 0..proteinValue) {
             drawRect(canvas, start, end, color)
             start += section
             end += section
         }
 
-        for (i in percent..width){
+        for (i in proteinValue..width) {
             drawRect(canvas, start, end, background)
-            start+=section
-            end+=section
+            start += section
+            end += section
         }
     }
 
