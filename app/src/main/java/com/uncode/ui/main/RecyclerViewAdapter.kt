@@ -9,6 +9,7 @@ import com.uncode.R
 import com.uncode.ui.DataModel
 import kotlinx.android.synthetic.main.protein_type_card.view.*
 import kotlinx.android.synthetic.main.rv_item_list.view.*
+import kotlinx.android.synthetic.main.rv_metabolic_item_list.view.*
 
 class ResultItemAdapter(
     private val adapterData: List<DataModel> = listOf()
@@ -26,20 +27,8 @@ class ResultItemAdapter(
             }
         }
 
-        private fun writeWithPercent(value: Int) : String{
-            return "$value%"
-        }
-
         private fun bindMetabolic(item: DataModel.Metabolic) {
-            itemView.findViewById<TextView>(R.id.proteinTextView).text = item.protein
-            itemView.findViewById<TextView>(R.id.proteinValueTextView).text =
-                writeWithPercent(item.proteinValue)
-            itemView.findViewById<TextView>(R.id.carbohydrateTextView).text = item.carbohydrate
-            itemView.findViewById<TextView>(R.id.carbohydrateValue).text =
-                writeWithPercent(item.carbohydrateValue)
-            itemView.findViewById<TextView>(R.id.fatTextView).text = item.fat
-            itemView.findViewById<TextView>(R.id.fatValue).text = writeWithPercent(item.fatValue)
-            itemView.carbohydrateSeekBar.getData(item.proteinValue, item.carbohydrateValue, item.fatValue)
+            itemView.metabolicViewItem.setData(item)
         }
 
         private fun bindData(item: DataModel.Data) {

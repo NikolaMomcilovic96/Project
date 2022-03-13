@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val data = listOf(
-            DataModel.Metabolic("Protein", 28, "Carbohydrate", 47, "Fat", 25),
+            DataModel.Metabolic("Protein", 99,"Carbohydrate", 50,"Fat", 25),
             DataModel.Data(
                 "Tendency to Overweight",
                 "High",

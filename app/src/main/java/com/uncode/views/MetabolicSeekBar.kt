@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 
 class MetabolicSeekBar(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
@@ -20,22 +21,20 @@ class MetabolicSeekBar(context: Context, attrs: AttributeSet? = null) : View(con
     }
 
     private var proteinValue = 0
-    private var carbValue = 0
-    private var fatValue = 0
 
-    fun getData(protein: Int, carb: Int, fat: Int) {
-        proteinValue = protein
-        carbValue = carb
-        fatValue = fat
+    fun getData(value: Int) {
+        proteinValue = value
     }
 
     override fun onDraw(canvas: Canvas) {
-        val section = width / 100
-
+        val section = (width.toFloat() / 101)
+        Log.d("Width",width.toFloat().toString())
+        Log.d("Section", section.toString())
         var start = 0f
-        var end = section.toFloat()
+        var end = section
 
         for (i in 0..proteinValue) {
+            Log.d("Start, end", "$start, $end")
             drawRect(canvas, start, end, color)
             start += section
             end += section

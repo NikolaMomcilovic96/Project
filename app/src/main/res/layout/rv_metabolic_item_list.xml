@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <com.uncode.views.MetabolicViewItem
-        android:id="@+id/proteinTypeCard"
+        android:id="@+id/metabolicViewItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </FrameLayout>
