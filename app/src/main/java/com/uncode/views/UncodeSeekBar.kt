@@ -4,27 +4,27 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import android.widget.SeekBar
 
 class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
-    View(context, attrs) {
+    androidx.appcompat.widget.AppCompatSeekBar(context, attrs) {
 
-    private val paintGreen = Paint(Paint.ANTI_ALIAS_FLAG)
-        .apply {
-            color = Color.GREEN
+    private fun getPaint(paint: String): Paint {
+        return Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            when (paint) {
+                "green" -> {
+                    color = Color.GREEN
+                }
+                "yellow" -> {
+                    color = Color.YELLOW
+                }
+                "red" -> {
+                    color = Color.RED
+                }
+            }
             style = Paint.Style.FILL
         }
-
-    private val paintYellow = Paint(Paint.ANTI_ALIAS_FLAG)
-        .apply {
-            color = Color.YELLOW
-            style = Paint.Style.FILL
-        }
-
-    private val paintRed = Paint(Paint.ANTI_ALIAS_FLAG)
-        .apply {
-            color = Color.RED
-            style = Paint.Style.FILL
-        }
+    }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -37,13 +37,13 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
         for (i in 0 until 50) {
             when (i) {
                 in 0..15 -> {
-                    drawRect(canvas, start, end, paintGreen)
+                    drawRect(canvas, start, end, getPaint("green"))
                 }
                 in 16..33 -> {
-                    drawRect(canvas, start, end, paintYellow)
+                    drawRect(canvas, start, end, getPaint("yellow"))
                 }
                 in 34..50 -> {
-                    drawRect(canvas, start, end, paintRed)
+                    drawRect(canvas, start, end, getPaint("red"))
                 }
             }
 
@@ -56,12 +56,14 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
     private fun drawRect(canvas: Canvas, start: Float, end: Float, color: Paint) {
         canvas.drawRoundRect(
             start,
-            10f,
+            10f.toDp(),
             end,
-            (height.toFloat() - 10f),
+            (height.toFloat() - 10f).toDp(),
             1f,
             1f,
             color
         )
     }
+
+    private fun Float.toDp() = this * resources.displayMetrics.density
 }

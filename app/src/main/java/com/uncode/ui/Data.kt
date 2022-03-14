@@ -1,6 +1,6 @@
 package com.uncode.ui
 
-sealed class DataModel {
+open class DataModel {
     data class Data(
         val title: String,
         val value: String,

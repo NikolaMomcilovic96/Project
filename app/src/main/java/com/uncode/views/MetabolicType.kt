@@ -5,10 +5,9 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 
-class MetabolicSeekBar(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
+class MetabolicType(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
 
     private val color = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.GREEN
@@ -27,35 +26,34 @@ class MetabolicSeekBar(context: Context, attrs: AttributeSet? = null) : View(con
     }
 
     override fun onDraw(canvas: Canvas) {
-        val section = (width.toFloat() / 101)
-        Log.d("Width",width.toFloat().toString())
-        Log.d("Section", section.toString())
-        var start = 0f
-        var end = section
+        when {
+            proteinValue < 0 -> {
+                drawRect(canvas, 0f, width.toFloat(), background)
+            }
+            proteinValue > 100 -> {
+                drawRect(canvas, 0f, width.toFloat(), color)
+            }
+            else -> {
+                val section = width.toFloat() / 100
+                val loaded = section * proteinValue
 
-        for (i in 0..proteinValue) {
-            Log.d("Start, end", "$start, $end")
-            drawRect(canvas, start, end, color)
-            start += section
-            end += section
-        }
-
-        for (i in proteinValue..width) {
-            drawRect(canvas, start, end, background)
-            start += section
-            end += section
+                drawRect(canvas, 0f, loaded, color)
+                drawRect(canvas, loaded, width.toFloat(), background)
+            }
         }
     }
 
     private fun drawRect(canvas: Canvas, start: Float, end: Float, color: Paint) {
         canvas.drawRoundRect(
             start,
-            0f,
+            0f.toDp(),
             end,
-            height.toFloat(),
+            height.toFloat().toDp(),
             0f,
             0f,
             color
         )
     }
+
+    private fun Float.toDp() = this * resources.displayMetrics.density
 }

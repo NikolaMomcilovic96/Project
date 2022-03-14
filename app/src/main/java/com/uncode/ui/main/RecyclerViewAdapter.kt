@@ -3,11 +3,9 @@ package com.uncode.ui.main
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uncode.R
 import com.uncode.ui.DataModel
-import kotlinx.android.synthetic.main.protein_type_card.view.*
 import kotlinx.android.synthetic.main.rv_item_list.view.*
 import kotlinx.android.synthetic.main.rv_metabolic_item_list.view.*
 
@@ -32,7 +30,8 @@ class ResultItemAdapter(
         }
 
         private fun bindData(item: DataModel.Data) {
-            itemView.resultItemView.setData(item)}
+            itemView.resultItemView.setData(item)
+        }
     }
 
     override fun onCreateViewHolder(
@@ -60,6 +59,9 @@ class ResultItemAdapter(
         return when (adapterData[position]) {
             is DataModel.Data -> TYPE_DATA
             is DataModel.Metabolic -> TYPE_METABOLIC
+            else -> {
+                2
+            }
         }
     }
 

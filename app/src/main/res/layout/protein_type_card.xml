@@ -55,42 +55,152 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <com.uncode.views.MetabolicSeekBar
-                android:id="@+id/proteinSeekBar"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="20dp"
-                app:layout_constraintCircleRadius="10dp"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-            <com.uncode.views.MetabolicSeekBar
-                android:id="@+id/carbohydrateSeekBar"
+                <com.uncode.views.MetabolicType
+                    android:id="@+id/proteinSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/proteinTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Protein"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/proteinValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:text="28%"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/proteinSeekBar" />
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-            <com.uncode.views.MetabolicSeekBar
-                android:id="@+id/fatSeekBar"
+                <com.uncode.views.MetabolicType
+                    android:id="@+id/carbohydrateSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/carbohydrateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Carbohydrate"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/carbohydrateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:text="47%"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/carbohydrateSeekBar" />
+                app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                <com.uncode.views.MetabolicType
+                    android:id="@+id/fatSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/fatValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:text="25%"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fatTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Fat"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/textView4"
@@ -103,83 +213,19 @@
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fatSeekBar" />
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
                 android:text="1,477 kcal"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView4" />
-
-            <TextView
-                android:id="@+id/proteinTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Protein"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/proteinSeekBar"
-                app:layout_constraintStart_toStartOf="@+id/proteinSeekBar"
-                app:layout_constraintTop_toTopOf="@+id/proteinSeekBar" />
-
-            <TextView
-                android:id="@+id/carbohydrateTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Carbohydrate"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/carbohydrateSeekBar"
-                app:layout_constraintStart_toStartOf="@+id/carbohydrateSeekBar"
-                app:layout_constraintTop_toTopOf="@+id/carbohydrateSeekBar" />
-
-            <TextView
-                android:id="@+id/fatTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Fat"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/fatSeekBar"
-                app:layout_constraintStart_toStartOf="@+id/fatSeekBar"
-                app:layout_constraintTop_toTopOf="@+id/fatSeekBar" />
-
-            <TextView
-                android:id="@+id/proteinValueTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="28%"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/proteinSeekBar"
-                app:layout_constraintEnd_toEndOf="@+id/proteinSeekBar"
-                app:layout_constraintTop_toTopOf="@+id/proteinSeekBar" />
-
-            <TextView
-                android:id="@+id/carbohydrateValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="47%"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/carbohydrateSeekBar"
-                app:layout_constraintEnd_toEndOf="@+id/carbohydrateSeekBar"
-                app:layout_constraintTop_toTopOf="@+id/carbohydrateSeekBar" />
-
-            <TextView
-                android:id="@+id/fatValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="25%"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/fatSeekBar"
-                app:layout_constraintEnd_toEndOf="@+id/fatSeekBar"
-                app:layout_constraintTop_toTopOf="@+id/fatSeekBar" />
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
