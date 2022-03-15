@@ -4,27 +4,9 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import android.widget.SeekBar
 
 class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
-    androidx.appcompat.widget.AppCompatSeekBar(context, attrs) {
-
-    private fun getPaint(paint: String): Paint {
-        return Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            when (paint) {
-                "green" -> {
-                    color = Color.GREEN
-                }
-                "yellow" -> {
-                    color = Color.YELLOW
-                }
-                "red" -> {
-                    color = Color.RED
-                }
-            }
-            style = Paint.Style.FILL
-        }
-    }
+    View(context, attrs) {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -37,23 +19,21 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
         for (i in 0 until 50) {
             when (i) {
                 in 0..15 -> {
-                    drawRect(canvas, start, end, getPaint("green"))
+                    drawRect(canvas, start, end, Color.GREEN)
                 }
                 in 16..33 -> {
-                    drawRect(canvas, start, end, getPaint("yellow"))
+                    drawRect(canvas, start, end, Color.YELLOW)
                 }
                 in 34..50 -> {
-                    drawRect(canvas, start, end, getPaint("red"))
+                    drawRect(canvas, start, end, Color.RED)
                 }
             }
-
             start += section
             end += section
         }
     }
 
-
-    private fun drawRect(canvas: Canvas, start: Float, end: Float, color: Paint) {
+    private fun drawRect(canvas: Canvas, start: Float, end: Float, paint: Int) {
         canvas.drawRoundRect(
             start,
             10f.toDp(),
@@ -61,7 +41,10 @@ class UncodeSeekBar(context: Context, attrs: AttributeSet? = null) :
             (height.toFloat() - 10f).toDp(),
             1f,
             1f,
-            color
+            Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                color = paint
+                style = Paint.Style.FILL
+            }
         )
     }
 

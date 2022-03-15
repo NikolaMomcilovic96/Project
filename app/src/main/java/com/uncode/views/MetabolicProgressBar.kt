@@ -5,19 +5,10 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
-import android.view.View
+import android.widget.ProgressBar
 
-class MetabolicType(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
-
-    private val color = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.GREEN
-        style = Paint.Style.FILL
-    }
-
-    private val background = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.GRAY
-        style = Paint.Style.FILL
-    }
+class MetabolicProgressBar(context: Context, attrs: AttributeSet? = null) :
+    ProgressBar(context, attrs) {
 
     private var proteinValue = 0
 
@@ -28,22 +19,22 @@ class MetabolicType(context: Context, attrs: AttributeSet? = null) : View(contex
     override fun onDraw(canvas: Canvas) {
         when {
             proteinValue < 0 -> {
-                drawRect(canvas, 0f, width.toFloat(), background)
+                drawRect(canvas, 0f, width.toFloat(), Color.GRAY)
             }
             proteinValue > 100 -> {
-                drawRect(canvas, 0f, width.toFloat(), color)
+                drawRect(canvas, 0f, width.toFloat(), Color.GREEN)
             }
             else -> {
                 val section = width.toFloat() / 100
                 val loaded = section * proteinValue
 
-                drawRect(canvas, 0f, loaded, color)
-                drawRect(canvas, loaded, width.toFloat(), background)
+                drawRect(canvas, 0f, loaded, Color.GREEN)
+                drawRect(canvas, loaded, width.toFloat(), Color.GRAY)
             }
         }
     }
 
-    private fun drawRect(canvas: Canvas, start: Float, end: Float, color: Paint) {
+    private fun drawRect(canvas: Canvas, start: Float, end: Float, paint: Int) {
         canvas.drawRoundRect(
             start,
             0f.toDp(),
@@ -51,7 +42,10 @@ class MetabolicType(context: Context, attrs: AttributeSet? = null) : View(contex
             height.toFloat().toDp(),
             0f,
             0f,
-            color
+            Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                color = paint
+                style = Paint.Style.FILL
+            }
         )
     }
 

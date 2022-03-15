@@ -24,8 +24,7 @@ class MetabolicViewItem @JvmOverloads constructor(context: Context, attrs: Attri
         findViewById<TextView>(R.id.proteinTextView).text = data.protein
         findViewById<TextView>(R.id.proteinValue).text = addPercent(data.proteinValue)
         findViewById<TextView>(R.id.carbohydrateTextView).text = data.carbohydrate
-        findViewById<TextView>(R.id.carbohydrateValue).text =
-            addPercent(data.carbohydrateValue)
+        findViewById<TextView>(R.id.carbohydrateValue).text = addPercent(data.carbohydrateValue)
         findViewById<TextView>(R.id.fatTextView).text = data.fat
         findViewById<TextView>(R.id.fatValue).text = addPercent(data.fatValue)
         proteinSeekBar.getData(data.proteinValue)
