@@ -16,17 +16,16 @@ class MetabolicViewItem @JvmOverloads constructor(context: Context, attrs: Attri
         LayoutInflater.from(context).inflate(R.layout.protein_type_card, this, true)
     }
 
-    private fun addPercent(item: Int): String {
-        return "$item%"
-    }
-
     fun setData(data: DataModel.Metabolic) {
+        val proteinValue = "${data.proteinValue}%"
+        val carbohydrateValue = "${data.carbohydrateValue}%"
+        val fatValue = "${data.fatValue}%"
         findViewById<TextView>(R.id.proteinTextView).text = data.protein
-        findViewById<TextView>(R.id.proteinValue).text = addPercent(data.proteinValue)
+        findViewById<TextView>(R.id.proteinValue).text = proteinValue
         findViewById<TextView>(R.id.carbohydrateTextView).text = data.carbohydrate
-        findViewById<TextView>(R.id.carbohydrateValue).text = addPercent(data.carbohydrateValue)
+        findViewById<TextView>(R.id.carbohydrateValue).text = carbohydrateValue
         findViewById<TextView>(R.id.fatTextView).text = data.fat
-        findViewById<TextView>(R.id.fatValue).text = addPercent(data.fatValue)
+        findViewById<TextView>(R.id.fatValue).text = fatValue
         proteinSeekBar.getData(data.proteinValue)
         carbohydrateSeekBar.getData(data.carbohydrateValue)
         fatSeekBar.getData(data.fatValue)

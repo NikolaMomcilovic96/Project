@@ -1,6 +1,6 @@
 package com.uncode.ui
 
-open class DataModel {
+sealed class DataModel {
     data class Data(
         val title: String,
         val value: String,
@@ -17,5 +17,20 @@ open class DataModel {
         val carbohydrateValue: Int,
         val fat: String,
         val fatValue: Int
+    ) : DataModel()
+
+    data class Vitamin(
+        val vitaminA: String,
+        val vitaminB1: String,
+        val vitaminB2: String,
+        val vitaminB3: String,
+        val vitaminB5: String,
+        val vitaminB6: String,
+        val vitaminB7: String,
+        val vitaminB9: String,
+        val vitaminC: String,
+        val vitaminD: String,
+        val vitaminE: String,
+        val vitaminK: String
     ) : DataModel()
 }

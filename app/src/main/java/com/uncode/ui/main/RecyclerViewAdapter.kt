@@ -22,6 +22,9 @@ class ResultItemAdapter(
                 is DataModel.Data -> {
                     bindData(dataModel)
                 }
+                is DataModel.Vitamin->{
+                    bindVitamin(dataModel)
+                }
             }
         }
 
@@ -32,6 +35,10 @@ class ResultItemAdapter(
         private fun bindData(item: DataModel.Data) {
             itemView.resultItemView.setData(item)
         }
+
+        private fun bindVitamin(item: DataModel.Vitamin){
+
+        }
     }
 
     override fun onCreateViewHolder(
@@ -41,6 +48,7 @@ class ResultItemAdapter(
         val layout = when (viewType) {
             TYPE_METABOLIC -> R.layout.rv_metabolic_item_list
             TYPE_DATA -> R.layout.rv_item_list
+            TYPE_VITAMIN -> R.layout.vitamins_card
             else -> {
                 0
             }
@@ -59,9 +67,7 @@ class ResultItemAdapter(
         return when (adapterData[position]) {
             is DataModel.Data -> TYPE_DATA
             is DataModel.Metabolic -> TYPE_METABOLIC
-            else -> {
-                2
-            }
+            is DataModel.Vitamin -> TYPE_VITAMIN
         }
     }
 
@@ -72,5 +78,6 @@ class ResultItemAdapter(
     companion object {
         const val TYPE_METABOLIC = 0
         const val TYPE_DATA = 1
+        const val TYPE_VITAMIN = 2
     }
 }
