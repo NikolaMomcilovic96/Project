@@ -42,6 +42,20 @@ class MainActivity : AppCompatActivity() {
                 "high",
                 "With your genotype you tend towards the yo-yo effect."
             ),
+            DataModel.Vitamin(
+                "Normal",
+                "Slightly Increased",
+                "Normal",
+                "Elevated",
+                "Normal",
+                "Slightly Increased",
+                "Normal",
+                "Normal",
+                "Slightly Increased",
+                "Normal",
+                "Elevated",
+                "Normal"
+            )
         )
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = ResultItemAdapter(data)

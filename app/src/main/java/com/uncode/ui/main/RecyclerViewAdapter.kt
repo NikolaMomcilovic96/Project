@@ -8,6 +8,7 @@ import com.uncode.R
 import com.uncode.ui.DataModel
 import kotlinx.android.synthetic.main.rv_item_list.view.*
 import kotlinx.android.synthetic.main.rv_metabolic_item_list.view.*
+import kotlinx.android.synthetic.main.rv_vitamin_item_list.view.*
 
 class ResultItemAdapter(
     private val adapterData: List<DataModel> = listOf()
@@ -37,7 +38,7 @@ class ResultItemAdapter(
         }
 
         private fun bindVitamin(item: DataModel.Vitamin){
-
+            itemView.vitaminViewItem.setData(item)
         }
     }
 
@@ -48,7 +49,7 @@ class ResultItemAdapter(
         val layout = when (viewType) {
             TYPE_METABOLIC -> R.layout.rv_metabolic_item_list
             TYPE_DATA -> R.layout.rv_item_list
-            TYPE_VITAMIN -> R.layout.vitamins_card
+            TYPE_VITAMIN -> R.layout.rv_vitamin_item_list
             else -> {
                 0
             }

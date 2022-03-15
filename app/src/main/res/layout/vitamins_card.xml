@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,110 +26,166 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="TextView"
+                android:text="Vitamins"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <include
-                android:id="@+id/vitaminA"
+                android:id="@+id/includeA"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_height="44dp"
+                android:layout_margin="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <include
-                android:id="@+id/vitaminB1"
+                android:id="@+id/includeB1"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminA" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeA" />
 
             <include
-                android:id="@+id/vitaminB2"
+                android:id="@+id/includeB2"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminB1" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeB1" />
 
             <include
-                android:id="@+id/vitaminB3"
+                android:id="@+id/includeB3"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminB2" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeB2" />
 
             <include
-                android:id="@+id/vitaminB5"
+                android:id="@+id/includeB5"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminB3" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeB3" />
 
             <include
-                android:id="@+id/vitaminB6"
+                android:id="@+id/includeB6"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminB5" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeB5" />
 
             <include
-                android:id="@+id/vitaminB7"
+                android:id="@+id/includeB7"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminB6" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeB6" />
 
             <include
-                android:id="@+id/vitaminB9"
+                android:id="@+id/includeB9"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminB7" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeB7" />
 
             <include
-                android:id="@+id/vitaminC"
+                android:id="@+id/includeC"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminB9" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeB9" />
 
             <include
-                android:id="@+id/vitaminD"
+                android:id="@+id/includeD"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminC" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeC" />
 
             <include
-                android:id="@+id/vitaminE"
+                android:id="@+id/includeE"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/vitaminD" />
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeD" />
 
             <include
-                android:id="@+id/vitaminK"
+                android:id="@+id/includeK"
                 layout="@layout/vitamin_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/vitaminE" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeE" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
