@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             DataModel.Antioxidants(
                 "Normal",
                 "Normal"
-            )/*,
+            ),
             DataModel.UnsaturatedFattyAcids(
                 "Normal",
                 "Normal"
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                 "Normal",
                 "Elevated",
                 "Elevated"
-            )*/
+            )
         )
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = ResultItemAdapter(data)

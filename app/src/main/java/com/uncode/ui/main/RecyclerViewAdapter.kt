@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.rv_antioxidants_item_list.view.*
 import kotlinx.android.synthetic.main.rv_item_list.view.*
 import kotlinx.android.synthetic.main.rv_metabolic_item_list.view.*
 import kotlinx.android.synthetic.main.rv_minerals_item_list.view.*
+import kotlinx.android.synthetic.main.rv_sensitivities_item_list.view.*
+import kotlinx.android.synthetic.main.rv_unsaturated_acids_item_list.view.*
 import kotlinx.android.synthetic.main.rv_vitamin_item_list.view.*
 
 class ResultItemAdapter(
@@ -64,11 +66,11 @@ class ResultItemAdapter(
         }
 
         private fun bindUnsaturatedFattyAcids(item: DataModel.UnsaturatedFattyAcids) {
-
+            itemView.unsaturatedAcidsViewItem.setData(item)
         }
 
         private fun bindSensitivities(item: DataModel.Sensitivities) {
-
+            itemView.sensitivitiesViewItem.setData(item)
         }
     }
 
@@ -82,8 +84,10 @@ class ResultItemAdapter(
             TYPE_VITAMIN -> R.layout.rv_vitamin_item_list
             TYPE_MINERALS -> R.layout.rv_minerals_item_list
             TYPE_ANTIOXIDANTS -> R.layout.rv_antioxidants_item_list
+            TYPE_UNSATURATED_FATTY_ACIDS -> R.layout.rv_unsaturated_acids_item_list
+            TYPE_SENSITIVITIES -> R.layout.rv_sensitivities_item_list
             else -> {
-                0
+                7
             }
         }
 

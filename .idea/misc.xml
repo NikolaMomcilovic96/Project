@@ -28,7 +28,11 @@
         <entry key="app/src/main/res/layout/rv_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/rv_metabolic_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/rv_minerals_item_list.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/rv_sensitivities_item_list.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/rv_unsaturated_acids_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/rv_vitamin_item_list.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/sensitivities_card.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/unsaturated_acids_card.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/vitamin_field.xml" value="0.25427350427350426" />
         <entry key="app/src/main/res/layout/vitamin_view_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/vitamins_card.xml" value="0.25" />
