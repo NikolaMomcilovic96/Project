@@ -55,7 +55,27 @@ class MainActivity : AppCompatActivity() {
                 "Normal",
                 "Elevated",
                 "Normal"
-            )
+            ),
+            DataModel.Minerals(
+                "Normal",
+                "Normal",
+                "Slightly Increased",
+                "Normal",
+                "Elevated"
+            ),
+            DataModel.Antioxidants(
+                "Normal",
+                "Normal"
+            )/*,
+            DataModel.UnsaturatedFattyAcids(
+                "Normal",
+                "Normal"
+            ),
+            DataModel.Sensitivities(
+                "Normal",
+                "Elevated",
+                "Elevated"
+            )*/
         )
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = ResultItemAdapter(data)

@@ -20,10 +20,14 @@
         <entry key="..\:/Users/nikol/AndroidStudioProjects/UNCODE/app/src/main/res/layout/rv_item_list.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/nikol/AndroidStudioProjects/UNCODE/app/src/main/res/layout/sample_my_view.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/antioxidants_card.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/minerals_card.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/protein_type_card.xml" value="0.21569671630859377" />
         <entry key="app/src/main/res/layout/result_item.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/rv_antioxidants_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/rv_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/rv_metabolic_item_list.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/rv_minerals_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/rv_vitamin_item_list.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/vitamin_field.xml" value="0.25427350427350426" />
         <entry key="app/src/main/res/layout/vitamin_view_item_list.xml" value="0.21784420289855072" />

@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.uncode.R
 import com.uncode.ui.DataModel
+import kotlinx.android.synthetic.main.rv_antioxidants_item_list.view.*
 import kotlinx.android.synthetic.main.rv_item_list.view.*
 import kotlinx.android.synthetic.main.rv_metabolic_item_list.view.*
+import kotlinx.android.synthetic.main.rv_minerals_item_list.view.*
 import kotlinx.android.synthetic.main.rv_vitamin_item_list.view.*
 
 class ResultItemAdapter(
@@ -23,8 +25,20 @@ class ResultItemAdapter(
                 is DataModel.Data -> {
                     bindData(dataModel)
                 }
-                is DataModel.Vitamin->{
+                is DataModel.Vitamin -> {
                     bindVitamin(dataModel)
+                }
+                is DataModel.Minerals -> {
+                    bindMinerals(dataModel)
+                }
+                is DataModel.Antioxidants -> {
+                    bindAntioxidants(dataModel)
+                }
+                is DataModel.UnsaturatedFattyAcids -> {
+                    bindUnsaturatedFattyAcids(dataModel)
+                }
+                is DataModel.Sensitivities -> {
+                    bindSensitivities(dataModel)
                 }
             }
         }
@@ -37,8 +51,24 @@ class ResultItemAdapter(
             itemView.resultItemView.setData(item)
         }
 
-        private fun bindVitamin(item: DataModel.Vitamin){
+        private fun bindVitamin(item: DataModel.Vitamin) {
             itemView.vitaminViewItem.setData(item)
+        }
+
+        private fun bindMinerals(item: DataModel.Minerals) {
+            itemView.mineralsViewItem.setData(item)
+        }
+
+        private fun bindAntioxidants(item: DataModel.Antioxidants) {
+            itemView.antioxidantsViewItem.setData(item)
+        }
+
+        private fun bindUnsaturatedFattyAcids(item: DataModel.UnsaturatedFattyAcids) {
+
+        }
+
+        private fun bindSensitivities(item: DataModel.Sensitivities) {
+
         }
     }
 
@@ -50,6 +80,8 @@ class ResultItemAdapter(
             TYPE_METABOLIC -> R.layout.rv_metabolic_item_list
             TYPE_DATA -> R.layout.rv_item_list
             TYPE_VITAMIN -> R.layout.rv_vitamin_item_list
+            TYPE_MINERALS -> R.layout.rv_minerals_item_list
+            TYPE_ANTIOXIDANTS -> R.layout.rv_antioxidants_item_list
             else -> {
                 0
             }
@@ -69,6 +101,10 @@ class ResultItemAdapter(
             is DataModel.Data -> TYPE_DATA
             is DataModel.Metabolic -> TYPE_METABOLIC
             is DataModel.Vitamin -> TYPE_VITAMIN
+            is DataModel.Minerals -> TYPE_MINERALS
+            is DataModel.Antioxidants -> TYPE_ANTIOXIDANTS
+            is DataModel.UnsaturatedFattyAcids -> TYPE_UNSATURATED_FATTY_ACIDS
+            is DataModel.Sensitivities -> TYPE_SENSITIVITIES
         }
     }
 
@@ -80,5 +116,9 @@ class ResultItemAdapter(
         const val TYPE_METABOLIC = 0
         const val TYPE_DATA = 1
         const val TYPE_VITAMIN = 2
+        const val TYPE_MINERALS = 3
+        const val TYPE_ANTIOXIDANTS = 4
+        const val TYPE_UNSATURATED_FATTY_ACIDS = 5
+        const val TYPE_SENSITIVITIES = 6
     }
 }

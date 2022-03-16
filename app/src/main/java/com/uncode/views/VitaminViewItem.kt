@@ -2,14 +2,12 @@ package com.uncode.views
 
 import android.content.Context
 import android.graphics.Color.*
-import android.text.Layout
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.uncode.R
-import com.uncode.databinding.VitaminsCardBinding
 import com.uncode.ui.DataModel
 import kotlinx.android.synthetic.main.vitamin_field.view.*
 import kotlinx.android.synthetic.main.vitamins_card.view.*
@@ -82,7 +80,7 @@ class VitaminViewItem @JvmOverloads constructor(context: Context, attrs: Attribu
             "Slightly Increased" -> {
                 vitaminCard.setTextColor(YELLOW)
             }
-            else -> {
+            "Elevated" -> {
                 vitaminCard.setTextColor(RED)
             }
         }

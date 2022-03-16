@@ -33,4 +33,28 @@ sealed class DataModel {
         val vitaminE: String,
         val vitaminK: String
     ) : DataModel()
+
+    data class Minerals(
+        val calcium: String,
+        val iron: String,
+        val magnesium: String,
+        val selenium: String,
+        val zinc: String
+    ) : DataModel()
+
+    data class Antioxidants(
+        val coq10: String,
+        val lackOfGluthione: String
+    ) : DataModel()
+
+    data class UnsaturatedFattyAcids(
+        val monounsaturated: String,
+        val polyunsaturated: String
+    ) : DataModel()
+
+    data class Sensitivities(
+        val caffeine: String,
+        val gluten: String,
+        val salt: String
+    ) : DataModel()
 }
