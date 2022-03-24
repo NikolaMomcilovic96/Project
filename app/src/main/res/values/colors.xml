@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="Primary">#00C4A8</color>
-    <color name="Primary2">#6967DE</color>
-    <color name="Secondary">#2CAFCB</color>
-    <color name="Text">#7D131921</color>
-    <color name="Modal_overlay">#4D131921</color>
-    <color name="Divider">#17131921</color>
-    <color name="Card">#F2F4F7</color>
-    <color name="Background">#131921</color>
-    <color name="Background_Gray">#FFF</color>
-    <color name="Alert_red">#F2665B</color>
-    <color name="Green">#35DC99</color>
-    <color name="Pink">#FF808B</color>
-    <color name="Yellow">#F4BE5E</color>
+    <color name="primary">#00C4A8</color>
+    <color name="primary2">#6967DE</color>
+    <color name="secondary">#2CAFCB</color>
+    <color name="text">#7D131921</color>
+    <color name="modal_overlay">#4D131921</color>
+    <color name="divider">#17131921</color>
+    <color name="card">#F2F4F7</color>
+    <color name="background">#131921</color>
+    <color name="background_gray">#FFF</color>
+    <color name="alert_red">#F2665B</color>
+    <color name="green">#35DC99</color>
+    <color name="pink">#FF808B</color>
+    <color name="yellow">#F4BE5E</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
 </resources>
